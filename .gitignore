@@ -1,0 +1,7 @@
+# Node
+node_modules/
+
+# CI-ephemeral archive mirrors: build.mjs writes archive/<slug>/ for theses
+# flagged archive:true. These are regenerated and served from the Pages
+# artifact on every deploy — never committed, to keep the repo small.
+/archive/

@@ -1,0 +1,13 @@
+{
+  "name": "thesis-collection",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Federated thesis portal — indexes lab theses and links out to each one's own site.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
