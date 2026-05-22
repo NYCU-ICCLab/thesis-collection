@@ -1,0 +1,3 @@
+[submodule "theses/neurostage"]
+	path = theses/neurostage
+	url = https://github.com/Ashurali/neurostage-thesis-viz
