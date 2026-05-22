@@ -4,10 +4,7 @@ A **federated** portal that indexes the lab's theses. Each thesis lives in its
 own repository and deploys to its **own** GitHub Pages site; this portal only
 **indexes** them and links out. Adding a thesis is a one-line change.
 
-**Live site:** https://&lt;LAB-ORG&gt;.github.io/thesis-collection/
-
-> Replace `<LAB-ORG>` throughout this README with your GitHub org/user once the
-> repos exist (see [Set the owner](#set-the-owner)).
+**Live site:** https://nycu-icclab.github.io/thesis-collection/
 
 ## How it works
 
@@ -20,7 +17,7 @@ own repository and deploys to its **own** GitHub Pages site; this portal only
 - A thesis breaking its own build can never break the portal: the portal stores
   only each thesis's URL, never its code.
 - Every path the page emits is **relative**, so it works from the project
-  subpath `https://<LAB-ORG>.github.io/thesis-collection/`.
+  subpath `https://nycu-icclab.github.io/thesis-collection/`.
 
 ## Repository layout
 
@@ -43,7 +40,7 @@ The thesis repo must contain a root `thesis.json` (start it from
 `thesis-template`).
 
 ```bash
-git submodule add https://github.com/<LAB-ORG>/thesis-<slug> theses/<slug>
+git submodule add https://github.com/nycu-icclab/thesis-<slug> theses/<slug>
 git commit -am "Add thesis: <slug>"
 git push        # CI runs build.mjs -> regenerates theses.json -> redeploys
 ```
@@ -104,23 +101,10 @@ immediately; CI regenerates it on every push regardless.
 ## Clone
 
 ```bash
-git clone --recurse-submodules https://github.com/<LAB-ORG>/thesis-collection
+git clone --recurse-submodules https://github.com/nycu-icclab/thesis-collection
 ```
 
 Already cloned without submodules? `git submodule update --init --recursive`.
-
-## Set the owner
-
-This README and the add-a-thesis commands use `<LAB-ORG>` as a placeholder for
-your GitHub org/user. The workflow files do **not** reference the org, so only
-this README needs editing. Replace every `<LAB-ORG>` with your real owner.
-
-## First-time GitHub Pages setup
-
-1. Create `https://github.com/<LAB-ORG>/thesis-collection` and push this repo.
-2. Settings → Pages → **Source: GitHub Actions** (one-time).
-3. The `Build & deploy portal` workflow then runs on every push to `main`, on a
-   weekly schedule (to pick up external-site changes), and on manual dispatch.
 
 ## Notes
 
